@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+
+    <div id="loadProgress">Image Load Progress:</div>
+
+    <div class="row">
+        <form id="form" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-3">
+                    <label for="selectFile" class="upload-label">
+                        Choose...
+                    </label>
+                    <input type="file" name="file" id="selectFile" accept=".png, .jpg, .jpeg, .dcm">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div style="width:512px;height:512px;position:relative;color: white;display:inline-block;border-style:solid;border-color:black;"
+                 oncontextmenu="return false"
+                 class='disable-selection noIbar'
+                 unselectable='on'
+                 onselectstart='return false;'
+                 onmousedown='return false;'>
+                <div id="dicomImage"
+                     style="width:512px;height:512px;top:0px;left:0px; position:absolute">
+                </div>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary btn-lg " id="btn-predict">Predict!</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div>
+                <span>Model-1</span>  
+                    <img src="#" alt="Image is Here" width="20%" id="userImage1"></img>
+            </div>
+            <div>
+                <span>Model-2</span>  
+                <img src="#" alt="Image is Here" width="20%" id="userImage2"></img>
+               
+            <div>
+                <span>Model-3</span>  
+                <img src="#" alt="Image is Here" width="20%" id="userImage3"></img>
+               
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
